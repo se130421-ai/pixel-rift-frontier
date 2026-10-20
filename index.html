@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pixel Rift Frontier</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app">
+    <div class="panel">
+      <div class="header">
+        <div>
+          <h1>Pixel Rift Frontier</h1>
+          <div class="small">직업/지형/도감/전리품 테스트 웹앱</div>
+        </div>
+        <div class="topbar">
+          <div class="player-badge" id="playerBadge">로드 전</div>
+          <div class="player-badge" id="goldBadge">골드: 0</div>
+        </div>
+      </div>
+
+      <div class="input-row">
+        <input id="playerNameInput" placeholder="플레이어 이름 입력" />
+        <button class="primary" id="startGameBtn">게임 시작</button>
+      </div>
+    </div>
+
+    <div class="layout">
+      <div class="panel">
+        <h3>직업 선택</h3>
+        <div id="jobList" class="job-list"></div>
+      </div>
+
+      <div class="panel">
+        <h3>현재 상태</h3>
+        <div class="hero">
+          <div class="character-box">
+            <div class="status-row">
+              <span>직업</span>
+              <strong id="selectedJobName">-</strong>
+            </div>
+            <div class="status-row">
+              <span>레벨</span>
+              <strong id="playerLevel">1</strong>
+            </div>
+            <div class="status-row">
+              <span>HP</span>
+              <strong id="playerHpText">0 / 0</strong>
+            </div>
+            <div class="hpbar">
+              <div id="playerHpBar" class="hpfill" style="width:100%;"></div>
+            </div>
+            <div class="status-row">
+              <span>마나</span>
+              <strong id="playerManaText">0 / 0</strong>
+            </div>
+            <div class="status-row">
+              <span>스테미나</span>
+              <strong id="playerStaminaText">0 / 0</strong>
+            </div>
+
+            <button class="secondary big-btn" id="saveBtn">저장</button>
+          </div>
+
+          <div class="battle-box">
+            <h3>지형 선택</h3>
+            <div id="mapList" class="map-list"></div>
+            <button class="gold big-btn" id="huntBtn">몬스터 생성 / 사냥</button>
+          </div>
+        </div>
+
+        <div id="monsterPanel" class="monster-box hidden">
+          <div class="monster-header">
+            <div class="monster-name" id="monsterName">-</div>
+            <span class="badge" id="monsterTypeBadge">-</span>
+          </div>
+          <div class="monster-summary">
+            <span class="small" id="monsterInfo">-</span>
+            <span class="small" id="monsterRespawn">-</span>
+          </div>
+          <div class="hpbar">
+            <div id="monsterHpBar" class="hpfill" style="width:100%; background: linear-gradient(90deg, #ef4444, #f97316);"></div>
+          </div>
+          <div class="monster-summary">
+            <span id="monsterHpText">0 / 0</span>
+            <button class="primary" id="attackBtn">공격</button>
+          </div>
+        </div>
+
+        <div id="battleLog" class="log"></div>
+      </div>
+
+      <div class="panel">
+        <h3>지형 정보</h3>
+        <div id="selectedMapInfo" class="job-card">
+          <div class="small">맵을 선택하면 설명이 표시됩니다.</div>
+        </div>
+
+        <h3 style="margin-top:18px;">인벤토리</h3>
+        <div id="inventoryList" class="inventory-list"></div>
+
+        <h3 style="margin-top:18px;">도감</h3>
+        <div id="bestiaryList" class="bestiary-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
